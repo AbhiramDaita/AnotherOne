@@ -67,7 +67,7 @@ export default function UserDetails(){
 
     return(
         <div className="detailsHolder">
-            
+            <Header/>
             <div className='noteText child'>
                 <FloatingButton title="continue"/>
                 <div>
