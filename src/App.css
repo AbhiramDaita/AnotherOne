@@ -190,7 +190,7 @@ html,body{
   left:0;
   font-size: 150px;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.15;
   font-family: 'League Spartan',sans-serif;
 }
 
@@ -202,8 +202,63 @@ html,body{
 .floatingButton{
   position:absolute;
   bottom:15px;
+  right:0;
 }
 .middle{
   position: absolute;
+}
 
+.audioHolder{
+  font-family: 'League Spartan',sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.note{
+  font-size:18px;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.4);
+  border-radius: 5px;
+  padding:10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-top:150px;
+}
+
+.hello{
+  margin-left:10px;
+}
+
+.card{
+  margin-top:20px;
+}
+
+.cardTitle{
+  font-size:20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.cardCap{
+  margin-bottom: 10px;
+  margin-left:15px;
+}
+
+
+.modalTitle{
+  font-family: 'League Spartan',sans-serif;
+  font-size:20px;
+  margin:0 0 15px 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.modalCap{
+  text-align: center;
+  font-family: 'League Spartan',sans-serif;
+  font-size:15px;
+  font-weight: 550;
+  opacity: 0.5;
 }
