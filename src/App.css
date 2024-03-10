@@ -213,7 +213,6 @@ html,body{
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .note{
@@ -261,4 +260,50 @@ html,body{
   font-size:15px;
   font-weight: 550;
   opacity: 0.5;
+}
+
+.thankYouHolder{
+  display:flex;
+  justify-content: center;
+  height: 100%;
+  font-family:'League Spartan',sans-serif;
+  align-items: center;
+}
+
+.thankYouTitle{
+  text-align: center;
+  font-size:35px;
+  font-weight: 600;
+}
+
+.thankYouCap{
+  font-weight: 300;
+  margin-top:10px;
+}
+
+.result{
+  margin-top:30px;
+  display: flex;
+  justify-content: center;
+}
+
+.resultCap{
+  font-size:17px;
+  margin-left: 20px;
+}
+
+.resultO{
+  font-size:20px;
+  font-weight: 600;
+  color: #22A699;
+}
+
+.start{
+  font-size: 18px;
+  color:rgba(0,0,0,0.6);
+
+}
+
+.resultBox{
+  display:none !important;
 }

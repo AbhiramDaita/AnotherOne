@@ -75,7 +75,7 @@ export default function Card(props){
                             component="label"
                             style={{marginLeft:"25%"}}>
                                 Upload Audio
-                                <VisuallyHiddenInput type='file' accept='.mp3,audio' onChange={(e)=>props.onClick(e.target.files[0])}/>
+                                <VisuallyHiddenInput type='file' accept='.mp3,audio' onChange={(e)=>props.onClick(e.target.files[0],props.title)}/>
                             </UploadButton>
                         <p className='modalCap'>Maximum of 10-15 seconds</p>
                     </Box>

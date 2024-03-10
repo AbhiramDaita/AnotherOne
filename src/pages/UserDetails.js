@@ -11,7 +11,7 @@ import Header from '../components/header';
 import FloatingButton from '../components/FloatingButton';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-
+import {useNavigate} from 'react-router-dom';
 
 const genders = [
     {
@@ -29,7 +29,7 @@ const genders = [
 ];
 
 export default function UserDetails(){
-
+    const navigate = useNavigate()
     const [selectedOne, setSelectedOne] = React.useState("")
     const handleSelectedOne = ev =>{
         setSelectedOne(ev.target.value)
@@ -106,7 +106,7 @@ export default function UserDetails(){
         twoRef.current?.scrollIntoView({behavior:'smooth'})}
 
     const handleClick =()=>{
-        
+        navigate("/record")
         axios
             .post("http://localhost:5000/anotherone-efb39/asia-south1/api/UserData",{
                 'age':age,
@@ -123,6 +123,7 @@ export default function UserDetails(){
             })
             .then((res)=>{
                 cookies.set('myCat',res.data.id);
+
             })
             .catch((err)=>{
                 console.log(err)

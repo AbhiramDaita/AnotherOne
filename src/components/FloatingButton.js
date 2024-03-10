@@ -14,7 +14,8 @@ const ColorButton = styled(Button)(({theme})=>({
         backgroundColor:'#CEEDC7'
     },
     fontSize:'19px',
-    width:'200px'
+    width:'200px',
+    marginRight:"20px",
 }))
 
 

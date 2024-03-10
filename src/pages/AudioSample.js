@@ -6,26 +6,51 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import Header from '../components/header';
 import {getStorage, ref, uploadBytes} from 'firebase/storage';
 import Cookies from 'universal-cookie';
-
+import FloatingButton from '../components/FloatingButton';
+import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import axios from 'axios';
 
 export default function AudioSample(){
-
+    const navigate = useNavigate()
     const cookies = new Cookies();
     const storage = getStorage();
-   
     
-    const handleClick = (param)=>{
-        const id = cookies.get("myCat");
-        const storageRef = ref(storage,`files/${id}/${param.name}`);
-        uploadBytes(storageRef, param).then((snapshot)=>{
-           console.log('Uploaded a file'); 
-        });
+    
+    const [file, setFile] = React.useState()
+
+    const handleClick = (param,title)=>{
+        if(title === "Cough(Shallow)"){
+            setFile(param)
+            const id = cookies.get("myCat");
+            const storageRef = ref(storage,`files/${id}/${param.name}`);
+            uploadBytes(storageRef, param).then((snapshot)=>{
+               console.log('Uploaded a file'); 
+            });
+        }
+    }
+    const navigateClick = ()=>{
+        const formData = new FormData()
+        const imageFile = file
+        formData.append("audio_file",imageFile)
+        axios
+            .post("http://127.0.0.1:5000/predict",formData,{
+                headers:{
+                    'Content-Type' : 'multipart/form-data'
+                }
+            })
+            .then((r)=>{
+                cookies.set("output",r.data)
+                navigate("/end")
+            })
+      
     }
 
     return(
         <div>
             <Header/>
         <div className="audioHolder">
+            <FloatingButton title="continue" onClick={navigateClick}/>
             <div>
             <p className='backgroundText'>Upload</p>
                 <div className="note">
